@@ -1,11 +1,55 @@
+/* console.log(' A força está com voçê') */
 const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.listen(3000, function () {
+  console.log(" A força está com voçê");
+  console.log("server running on port 3000");
+});
+
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.post("/show", (req, res) => {
+  /*  console.log('Hello again..') */
+  console.log(req.body);
+});
+
+
+/* Salando dados em arquivo */
+/* 
+var texto = [];
+ texto = JSON.stringify(req.body); */
+ 
+ let texto = "O silencio vale ouro!"
+
+var fs = require("fs");
+fs.writeFile("/tmp/test", texto , function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("The file was saved!");
+  }
+});
+
+
+
+
+
+/* const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
 const ObjectId = require("mongodb").ObjectID;
 const MongoClient = require("mongodb").MongoClient;
 
-const uri =   "mongodb+srv://crud-nodejs.fvtpn.mongodb.net/crud-nodejs";
+const uri =   "mongodb+srv://user-13:<dbDanteste>@crud-nodejs.fvtpn.mongodb.net/crud-nodejs?retryWrites=true&w=majority";
 
 MongoClient.connect(uri, (err, client) => {
   if (err) return console.log(err);
@@ -97,4 +141,4 @@ app.route("/delete/:id").get((req, res) => {
     console.log("Deletado do Banco de Dados!");
     res.redirect("/show");
   });
-});
+}); */

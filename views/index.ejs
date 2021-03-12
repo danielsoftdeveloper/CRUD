@@ -24,7 +24,7 @@
 </head>
 
 <body>
-
+  <!-- Menu de navegação -->
   <nav class="navbar navbar-inverse navbar-fixed-top text-center w-auto">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -51,41 +51,227 @@
     <div class="text-center w-auto p-3 h-auto d-inline-block">
       </br>
       <p>
-      <h3 class="page-header">Registro de Veiculos : Responsivo</h3>
+      <h3 class="page-header">Registro de Veiculos</h3>
       </p>
+
+      <!--Parte de pesquisa  -->
+      <div>
+        <div id="top" class="row">
+          <div class="col-sm-3">
+            <h2>Veiculos Cadastrados</h2>
+          </div>
+          <div class="col-sm-6">
+
+            <div class="input-group h2">
+              <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+            </div>
+
+          </div>
+          <div class="col-sm-3">
+            <a href="" class="btn btn-primary pull-right h2" onclick="Mudarestado('veiculoid')">Novo Veiculo</a>
+          </div>
+          <!--  <div class="col-md-12">
+            <p>
+              <button class="btn btn-default pull-right h2"><a href="/show">Todos</a></button>
+            </p>
+          </div> -->
+        </div> <!-- /#top -->
+        <hr />
+        <!-- Lista de Pré cadastro -->
+        <div id="list" class="row">
+
+          <div class="table-responsive col-md-12">
+            <table class="table table-striped" cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Placa</th>
+                  <th>chassi</th>
+                  <th>Renavam</th>
+                  <th>Modelo</th>
+                  <th>Marca</th>
+                  <th>Ano</th>
+                  <th class="actions">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>HBO-4350</td>
+                  <td>332ZFGT88hhjshdsjsh66</td>
+                  <td>18877834338</td>
+                  <td>Argo 1.3 Drive</td>
+                  <td>Fiat</td>
+                  <td>2019/2020</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>HOJ-2150</td>
+                  <td>33gsgdhsg88hhjshdtd66</td>
+                  <td>666364333266</td>
+                  <td>Touro</td>
+                  <td>Fiat</td>
+                  <td>2020/2021</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>jgO-2434</td>
+                  <td>332ZFGTsd88hhdsjsh66</td>
+                  <td>12343444338</td>
+                  <td>Santana</td>
+                  <td>Volkswagen</td>
+                  <td>2010/2011</td>
+                  <td class="actions"> <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>ujk-3560</td>
+                  <td>332ZFGT88hhjshdsjsh66</td>
+                  <td>18877834338</td>
+                  <td>Vectra</td>
+                  <td>Chevrolet</td>
+                  <td>2015/2015</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>Hfg-0987</td>
+                  <td>332ZFGT88hhjshdsjsh66</td>
+                  <td>18877834338</td>
+                  <td>Golf</td>
+                  <td>Volkswagen</td>
+                  <td>2019/2020</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>06</td>
+                  <td>DAN-9845</td>
+                  <td>332ZFGT88hhjshdsjsh66</td>
+                  <td>18877834338</td>
+                  <td>Renegade</td>
+                  <td>Fiat</td>
+                  <td>2021/2021</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>07</td>
+                  <td>klj-0765</td>
+                  <td>332ZFGT88hhjshdsjsh66</td>
+                  <td>18877834338</td>
+                  <td>Honda Civic</td>
+                  <td>Honda</td>
+                  <td>2018/2019</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td>ght-3435</td>
+                  <td>332ZFGT88hhjshdsjsh66</td>
+                  <td>18877834338</td>
+                  <td>T-Cross</td>
+                  <td>Volkswagen</td>
+                  <td>2018/2019</td>
+                  <td class="actions">
+                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                      data-target="#delete-modal">Excluir</a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div> <!-- /#list -->
+
+        <div id="bottom" class="row">
+          <div class="col-md-12">
+            <ul class="pagination">
+              <li class="disabled"><a>&lt; Anterior</a></li>
+              <li class="disabled"><a>1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+            </ul><!-- /.pagination -->
+          </div>
+        </div> <!-- /#bottom -->
+      </div>
+      <!--  -->
 
       <div class="row">
         <form class="form-group" action="/show" method="POST">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo Um</strong></p>
             <input class="form-control form-control-lg" type="text" placeholder="ID" name="id">
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo Dois</strong></p>
             <input class="form-control form-control-lg" type="text" placeholder="Placa" name="placa">
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo Três</strong></p>
             <input class="form-control form-control-lg" type="text" placeholder="Chassi" name="chassi">
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo quatro</strong></p>
             <input class="form-control form-control-lg" type="text" placeholder="Renavam" name="renavam">
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo Cinco</strong></p>
             <input class="form-control form-control-lg" type="text" placeholder="Modelo" name="modelo">
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo seis</strong></p>
             <input class="form-control form-control-lg" type="text" placeholder="Marca" name="marca">
           </div>
-          <div class="col-md-12">
+          <div class="col-md-6">
             <p><strong>Campo sete</strong></p>
             <p> <input class="form-control form-control-lg" type="text" placeholder="Ano" name="ano">
             </p>
@@ -94,13 +280,10 @@
 
           <div class="col-md-12">
             <p>
-              <button class="btn btn-primary" type="submit">Enviar</button>
-            </p>
-            <p>
-              <button class="btn btn-default"><a href="/show">Todos</a></button>
+
+              <button class="btn btn-primary pull-right h2" type="submit">Enviar</button>
             </p>
           </div>
-
 
         </form>
       </div>
