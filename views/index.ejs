@@ -13,13 +13,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="namesController.js"></script>
 
 </head>
 
@@ -55,7 +51,7 @@
       </p>
 
       <!--Parte de pesquisa  -->
-      <div>
+      <div ng-app="myApp" ng-controller="veiculosCtrl" >
         <div id="top" class="row">
           <div class="col-sm-3">
             <h2>Veiculos Cadastrados</h2>
@@ -73,7 +69,7 @@
 
           </div>
           <div class="col-sm-3">
-            <a href="" class="btn btn-primary pull-right h2" onclick="Mudarestado('veiculoid')">Novo Veiculo</a>
+            <a href="" class="btn btn-primary pull-right h2" ng-click="myFunc()">Novo Veiculo</a>
           </div>
           <!--  <div class="col-md-12">
             <p>
@@ -85,146 +81,45 @@
         <!-- Lista de Pré cadastro -->
         <div id="list" class="row">
 
-          <div class="table-responsive col-md-12">
-            <table class="table table-striped" cellspacing="0" cellpadding="0">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Placa</th>
-                  <th>chassi</th>
-                  <th>Renavam</th>
-                  <th>Modelo</th>
-                  <th>Marca</th>
-                  <th>Ano</th>
-                  <th class="actions">Ações</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>01</td>
-                  <td>HBO-4350</td>
-                  <td>332ZFGT88hhjshdsjsh66</td>
-                  <td>18877834338</td>
-                  <td>Argo 1.3 Drive</td>
-                  <td>Fiat</td>
-                  <td>2019/2020</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>02</td>
-                  <td>HOJ-2150</td>
-                  <td>33gsgdhsg88hhjshdtd66</td>
-                  <td>666364333266</td>
-                  <td>Touro</td>
-                  <td>Fiat</td>
-                  <td>2020/2021</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>03</td>
-                  <td>jgO-2434</td>
-                  <td>332ZFGTsd88hhdsjsh66</td>
-                  <td>12343444338</td>
-                  <td>Santana</td>
-                  <td>Volkswagen</td>
-                  <td>2010/2011</td>
-                  <td class="actions"> <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>04</td>
-                  <td>ujk-3560</td>
-                  <td>332ZFGT88hhjshdsjsh66</td>
-                  <td>18877834338</td>
-                  <td>Vectra</td>
-                  <td>Chevrolet</td>
-                  <td>2015/2015</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>05</td>
-                  <td>Hfg-0987</td>
-                  <td>332ZFGT88hhjshdsjsh66</td>
-                  <td>18877834338</td>
-                  <td>Golf</td>
-                  <td>Volkswagen</td>
-                  <td>2019/2020</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>06</td>
-                  <td>DAN-9845</td>
-                  <td>332ZFGT88hhjshdsjsh66</td>
-                  <td>18877834338</td>
-                  <td>Renegade</td>
-                  <td>Fiat</td>
-                  <td>2021/2021</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>07</td>
-                  <td>klj-0765</td>
-                  <td>332ZFGT88hhjshdsjsh66</td>
-                  <td>18877834338</td>
-                  <td>Honda Civic</td>
-                  <td>Honda</td>
-                  <td>2018/2019</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>08</td>
-                  <td>ght-3435</td>
-                  <td>332ZFGT88hhjshdsjsh66</td>
-                  <td>18877834338</td>
-                  <td>T-Cross</td>
-                  <td>Volkswagen</td>
-                  <td>2018/2019</td>
-                  <td class="actions">
-                    <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-                    <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
-                      data-target="#delete-modal">Excluir</a>
-                  </td>
-                </tr>
+          <div>
+            <div class="table-responsive col-md-12">
+              <table class="table table-striped" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Placa</th>
+                    <th>chassi</th>
+                    <th>Renavam</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Ano</th>
+                    <th class="actions">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="x in veiculos">
+                    <td>{{ x.id }} </td>
+                    <td>{{ x.placa }}</td>
+                    <td>{{ x.chassi }}</td>
+                    <td>{{ x.renavam}}</td>
+                    <td>{{ x.modelo }}</td>
+                    <td>{{ x.marca}}</td>
+                    <td>{{ x.ano }}</td>
 
-              </tbody>
-            </table>
-          </div>
+                    <td class="actions">
+                      <a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
+                      <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+                      <a class="btn btn-danger btn-xs" href="#" data-toggle="modal"
+                        data-target="#delete-modal">Excluir</a>
+                    </td>
+                  </tr>
 
-        </div> <!-- /#list -->
+                </tbody>
+              </table>
+            </div>
+
+          </div> <!-- /#list -->
+        </div>
 
         <div id="bottom" class="row">
           <div class="col-md-12">
@@ -239,57 +134,86 @@
         </div> <!-- /#bottom -->
       </div>
       <!--  -->
-      <h2>Cadastrar Novo Veiculo</h2>
-      <div class="row">
-        <form class="form-group" action="/show" method="POST">
-          <div class="col-md-6">
-            <p><strong>Campo Um</strong></p>
-            <input class="form-control form-control-lg" type="text" placeholder="ID" name="id">
-          </div>
+      <div ng-app="app2" ng-show="showMe" ng-controller="myCtrl">
+        <h2>Cadastrar Novo Veiculo</h2>
+        <div class="row">
+          <form class="form-group" action="/show" method="POST">
+            <div class="col-md-6">
+              <p><strong>Campo Um</strong></p>
+              <input class="form-control form-control-lg" type="text" placeholder="ID" name="id">
+            </div>
 
-          <div class="col-md-6">
-            <p><strong>Campo Dois</strong></p>
-            <input class="form-control form-control-lg" type="text" placeholder="Placa" name="placa">
-          </div>
+            <div class="col-md-6">
+              <p><strong>Campo Dois</strong></p>
+              <input class="form-control form-control-lg" type="text" placeholder="Placa" name="placa">
+            </div>
 
-          <div class="col-md-6">
-            <p><strong>Campo Três</strong></p>
-            <input class="form-control form-control-lg" type="text" placeholder="Chassi" name="chassi">
-          </div>
+            <div class="col-md-6">
+              <p><strong>Campo Três</strong></p>
+              <input class="form-control form-control-lg" type="text" placeholder="Chassi" name="chassi">
+            </div>
 
-          <div class="col-md-6">
-            <p><strong>Campo quatro</strong></p>
-            <input class="form-control form-control-lg" type="text" placeholder="Renavam" name="renavam">
-          </div>
+            <div class="col-md-6">
+              <p><strong>Campo quatro</strong></p>
+              <input class="form-control form-control-lg" type="text" placeholder="Renavam" name="renavam">
+            </div>
 
-          <div class="col-md-6">
-            <p><strong>Campo Cinco</strong></p>
-            <input class="form-control form-control-lg" type="text" placeholder="Modelo" name="modelo">
-          </div>
+            <div class="col-md-6">
+              <p><strong>Campo Cinco</strong></p>
+              <input class="form-control form-control-lg" type="text" placeholder="Modelo" name="modelo">
+            </div>
 
-          <div class="col-md-6">
-            <p><strong>Campo seis</strong></p>
-            <input class="form-control form-control-lg" type="text" placeholder="Marca" name="marca">
-          </div>
-          <div class="col-md-6">
-            <p><strong>Campo sete</strong></p>
-            <p> <input class="form-control form-control-lg" type="text" placeholder="Ano" name="ano">
-            </p>
+            <div class="col-md-6">
+              <p><strong>Campo seis</strong></p>
+              <input class="form-control form-control-lg" type="text" placeholder="Marca" name="marca">
+            </div>
+            <div class="col-md-6">
+              <p><strong>Campo sete</strong></p>
+              <p> <input class="form-control form-control-lg" type="text" placeholder="Ano" name="ano">
+              </p>
 
-          </div>
+            </div>
 
-          <div class="col-md-12">
-            <p>
+            <div class="col-md-12">
+              <p>
 
-              <button class="btn btn-primary pull-right h2" type="submit">Enviar</button>
-            </p>
-          </div>
+                <button class="btn btn-primary pull-right h2" type="submit">Enviar</button>
+              </p>
+            </div>
 
-        </form>
+          </form>
+        </div>
       </div>
     </div>
 
   </div>
+
+  <script>
+    angular.module('myApp', []).controller('veiculosCtrl', function ($scope) {
+      $scope.veiculos = [
+        { id: '01', placa: 'hbo-9033', chassi: '1g33zh3h4xgh4jkh4', renavam: '14122344356', modelo: 'Argo Drive', marca: 'Fiat', ano: '2019' },
+        { id: '02', placa: 'osd-0333', chassi: '1234h3h4xgh4jkh48', renavam: '24122344356', modelo: 'Renault Clio', marca: 'Renault', ano: '2001' },
+        { id: '03', placa: 'htr-1234', chassi: '2g33zh3h4xgh4jkh4', renavam: '34122344356', modelo: 'Santana', marca: 'Volkswagen', ano: '2000' },
+        { id: '04', placa: 'hgt-3345', chassi: '3g33zh3h4xgh4jkh4', renavam: '44122344356', modelo: 'Golg', marca: 'Volkswagen', ano: '2004' },
+        { id: '05', placa: 'lko-3883', chassi: '4g33zh3h4xgh4jkh4', renavam: '54122344356', modelo: 'Fiat siena', marca: 'Fiat', ano: '2019' },
+        { id: '06', placa: 'jky-4563', chassi: '6g33zh3h4xgh4jkh4', renavam: '64122344356', modelo: 'T-Cross', marca: 'volksswagen', ano: '2021' },
+        { id: '07', placa: 'fgj-8899', chassi: '5g33zh3h4xgh4jkh4', renavam: '74122344356', modelo: 'HB20', marca: 'Hyundai', ano: '2018' },
+        { id: '08', placa: 'hjg-1000', chassi: '6g33zh3h4xgh4jkh66', renavam: '84122344356', modelo: 'I35', marca: 'Hyundai', ano: '2017' }
+      ];
+    });
+  </script>
+
+  <script>
+
+     var app = angular.module('app2', []);
+    app.controller('myCtrl', function ($scope) {
+      $scope.showMe = false;
+      $scope.myFunc = function () {
+        $scope.showMe = !$scope.showMe;
+      }
+    });
+  </script>
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
